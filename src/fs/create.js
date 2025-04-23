@@ -1,4 +1,4 @@
-import * as fs from 'node:fs';
+import fs from 'node:fs';
 
 const create = async () => {
     fs.writeFile('files/fresh.txt', 'I am fresh and young', {flag: 'wx'}, err => {
