@@ -1,7 +1,11 @@
 import {readFile} from 'node:fs/promises';
+import {join} from "node:path";
 
 const read = async () => {
-    readFile('files/fileToRead.txt', 'utf-8')
+    const __dirname = import.meta.dirname;
+    const filePath = join(__dirname, 'files/fileToRead.txt');
+
+    readFile(filePath, 'utf-8')
         .then((buffer) => {
             console.log(buffer.toString());
         })

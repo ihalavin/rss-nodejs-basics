@@ -1,9 +1,10 @@
 import {access, rename as renameFile} from 'node:fs/promises';
+import {join} from 'node:path';
 
 const rename = async () => {
     const __dirname = import.meta.dirname;
-    const newPath = __dirname + '/files/properFilename.md';
-    const oldPath = __dirname + '/files/wrongFilename.txt';
+    const newPath = join(__dirname, 'files/properFilename.md');
+    const oldPath = join(__dirname, 'files/wrongFilename.txt');
     const fsErrorMessage = 'FS operation failed';
 
     await access(newPath)

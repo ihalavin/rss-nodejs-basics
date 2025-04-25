@@ -1,7 +1,11 @@
 import {readdir} from 'node:fs/promises';
+import {join} from 'node:path';
 
 const list = async () => {
-    readdir('files')
+    const __dirname = import.meta.dirname;
+    const dirPath = join(__dirname, '/files');
+
+    readdir(dirPath)
         .then((files) => {
             console.log(files);
         })
